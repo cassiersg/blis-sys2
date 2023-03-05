@@ -1,8 +1,15 @@
-# blis-sys [![Package][package-img]][package-url] [![Documentation][documentation-img]][documentation-url]
+# blis-sys2 [![Package][package-img]][package-url] [![Documentation][documentation-img]][documentation-url]
 
-This repository contains is a Rust package that provides FFI bindings to [BLIS], the BLAS-like Library Instantiation Framework.
+This is a binding for the C API for the [BLIS library](https://github.com/flame/blis).
 
-This package depends on the [blis-src] crate to provide the BLIS library and to configure it.
+This crate depends on `blis-src` for the actual BLIS dependency.
+**You have to explicitly depend on [`blis-src`](https://docs.rs/blis-src)** to use this crate.
+The version of this crate matches the `blis-src` version, not the BLIS version.
+
+Related crates and alternatives:
+- [`blis-src`](https://docs.rs/blis-src): build/link BLIS library
+- [BLAS/LAPACK crate family](https://github.com/blas-lapack-rs/blas-lapack-rs.github.io/wiki)
+- [`blis-sys`](https://docs.rs/blis-sys): C binding for BLIS, includes its own BLIS build.
 
 # License
 
@@ -22,8 +29,8 @@ be dual licensed as above, without any additional terms or conditions.
 [blis]: https://github.com/flame/blis
 [blis-src]: https://crates.io/crates/blis-src
 
-[package-img]: https://img.shields.io/crates/v/blis-sys.svg
-[package-url]: https://crates.io/crates/blis-sys
-[documentation-img]: https://docs.rs/blis-sys/badge.svg
-[documentation-url]: https://docs.rs/blis-sys
+[package-img]: https://img.shields.io/crates/v/blis-sys2.svg
+[package-url]: https://crates.io/crates/blis-sys2
+[documentation-img]: https://docs.rs/blis-sys2/badge.svg
+[documentation-url]: https://docs.rs/blis-sys2
 
