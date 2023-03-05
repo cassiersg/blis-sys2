@@ -1,23 +1,23 @@
 [package]
-name = "blis-sys"
-version = "0.2.1-alpha.0"
+name = "blis-sys2"
+version = "0.2.1"
 authors = ["Gaëtan Cassiers <gaetan.cassiers@uclouvain.be>"]
 license = "MIT/Apache-2.0"
-description = "FFI bindings for BLIS library"
+description = "FFI bindings for BLIS library (depends on blis-src)"
 repository = "https://github.com/cassiersg/blis-sys"
 keywords = [ "blas", "blis" ]
 categories = [ "science" ]
-documentation = "http://docs.rs/blis-sys"
+documentation = "http://docs.rs/blis-sys2"
 readme = "README.md"
 
 [dependencies]
-blis-src = {version="0.2.1-alpha.0", default-features=false}
+blis-src = {version="0.2.1", default-features=false}
 
 [build-dependencies]
 bindgen = "0.58"
-blis-src = {version="0.2.1-alpha.0", default-features=false, features=["serial"]}
+blis-src = {version="0.2.1", default-features=false, features=["serial"]}
 
-[patch.crates-io]
-blis-src = {git="https://github.com/cassiersg/blis-src", branch="include"}
+#[patch.crates-io]
+#blis-src = {git="https://github.com/cassiersg/blis-src", branch="include"}
 #blis-src = {path="/home/cassiersg/Documents/github/blis-src/blis-src"}
 
