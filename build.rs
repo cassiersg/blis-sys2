@@ -13,9 +13,9 @@ fn main() {
     ];
     let mut builder = bindgen::Builder::default()
         .header("wrapper.h")
-        .clang_arg(&format!("-I{}", std::env::var("DEP_BLIS_INCLUDE").unwrap()))
+        .clang_arg(format!("-I{}", std::env::var("DEP_BLIS_INCLUDE").unwrap()))
         .generate_inline_functions(true)
-        .parse_callbacks(Box::new(bindgen::CargoCallbacks))
+        .parse_callbacks(Box::new(bindgen::CargoCallbacks::new()))
         .allowlist_function("bli_.*")
         .allowlist_var("BLIS_.*");
     for t in blis_types {
